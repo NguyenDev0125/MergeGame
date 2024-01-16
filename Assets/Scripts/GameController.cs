@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
             listFruits[i].HideFruit();
             int score = listFruits[i].scoreToAdd;
             effectController.PlayTextPopup(score.ToString(), listFruits[i].transform.position);
-            SoundManager.Instance.PlaySound(SoundName.MergeFruit);
+            SoundManager.Instance?.PlaySound(SoundName.MergeFruit);
             yield return new WaitForSeconds(delayDestroyAllFruits);
         }
         yield return new WaitForSeconds(1f);

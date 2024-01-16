@@ -33,8 +33,8 @@ public class Fruit : MonoBehaviour
     {
         merged = false;
         isCol = false;
-        transform.localScale = new Vector2(0.1f, 0.1f);
-        transform.DOScale(normalScale, 0.3f).SetEase(Ease.OutBack);
+        //transform.localScale = new Vector2(0.1f, 0.1f);
+        //transform.DOScale(normalScale, 0.3f).SetEase(Ease.OutBack);
     }
 
     public void HideFruit()
@@ -47,6 +47,11 @@ public class Fruit : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Wall") return;
         if (!isCol)
         {
             isCol = true;
@@ -54,10 +59,6 @@ public class Fruit : MonoBehaviour
             SoundManager.Instance?.PlaySound(SoundName.Bounce);
 
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Wall") return;
         if (merged) return;
         TryMergeFruit(collider.gameObject);
     }

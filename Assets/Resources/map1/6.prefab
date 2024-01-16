@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4462016035601529987}
   - component: {fileID: 4462016035601529986}
   - component: {fileID: 4462016035601529997}
-  - component: {fileID: 4462016035601529996}
+  - component: {fileID: 2136316845895749742}
   m_Layer: 3
   m_Name: 6
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4462016035601529999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.61, y: 3.71, z: 0}
-  m_LocalScale: {x: 2.970288, y: 2.970288, z: 2.970288}
+  m_LocalPosition: {x: 0.87, y: -6.91, z: 0}
+  m_LocalScale: {x: 0.27111626, y: 0.27111626, z: 0.27111626}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 480494947840240f7a242971a416d857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 34c19dc6cb4f6114f9ad122ab572273d, type: 3}
-  Scale: {x: 0.2, y: 0.2}
+  Sprite: {fileID: 21300000, guid: f96596e25ccaa3e42ae2e4b93795c19a, type: 3}
+  Scale: {x: 1, y: 1}
   SpriteMaterial: {fileID: 0}
   PixelPerMeter: 100
   SortingLayer: Default
@@ -282,15 +282,15 @@ CircleCollider2D:
   m_GameObject: {fileID: 4462016035601529999}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 14834b49c288e2c4781f3d414b657e2e, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005880341, y: -0.0075166007}
+  m_Offset: {x: 0.27, y: -0.36}
   serializedVersion: 2
-  m_Radius: 0.397623
---- !u!58 &4462016035601529996
-CircleCollider2D:
+  m_Radius: 4.82
+--- !u!60 &2136316845895749742
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -298,10 +298,55 @@ CircleCollider2D:
   m_GameObject: {fileID: 4462016035601529999}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 14834b49c288e2c4781f3d414b657e2e, type: 2}
-  m_IsTrigger: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0030141775}
-  serializedVersion: 2
-  m_Radius: 0.51428866
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.6862612, y: 2.0792274}
+      - {x: 3.2265215, y: 2.6002293}
+      - {x: 2.8806896, y: 2.9080276}
+      - {x: 2.4089603, y: 3.185792}
+      - {x: 1.79988, y: 3.4979458}
+      - {x: 1.1120996, y: 3.7097025}
+      - {x: 0.18488312, y: 3.7738552}
+      - {x: -0.4011469, y: 3.709857}
+      - {x: -1.082263, y: 3.5296125}
+      - {x: -1.9283276, y: 3.1157026}
+      - {x: -2.7535162, y: 2.4309587}
+      - {x: -3.3862886, y: 1.6245415}
+      - {x: -3.7791986, y: 0.60225964}
+      - {x: -3.924923, y: -0.036764145}
+      - {x: -3.9608507, y: -0.8063812}
+      - {x: -3.8682022, y: -1.5362158}
+      - {x: -3.6587467, y: -2.1225977}
+      - {x: -3.2012758, y: -2.8893404}
+      - {x: -2.7981791, y: -3.3126955}
+      - {x: -2.2030115, y: -3.7136717}
+      - {x: -1.4043207, y: -4.0507994}
+      - {x: -0.4822607, y: -4.1957083}
+      - {x: 0.41600513, y: -4.239724}
+      - {x: 1.2703905, y: -4.161771}
+      - {x: 2.0626888, y: -4.018798}
+      - {x: 2.6108088, y: -3.836533}
+      - {x: 2.9782095, y: -3.6400747}
+      - {x: 3.430523, y: -3.31709}
+      - {x: 3.83002, y: -2.8894053}
+      - {x: 4.139476, y: -2.4578714}
+      - {x: 4.332387, y: -2.06083}
+      - {x: 4.519452, y: -1.5766191}
+      - {x: 4.6120424, y: -0.98748684}
+      - {x: 4.6155252, y: -0.24962711}
+      - {x: 4.429509, y: 0.6204004}
+      - {x: 4.1792502, y: 1.3499022}
