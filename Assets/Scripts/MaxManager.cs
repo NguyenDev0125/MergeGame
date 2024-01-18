@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MaxManager : MonoSingleton<MaxManager>
 {
-    string sdkKey = "mmSrtDDcKr0FHygAqeGqgGZHyOg_eXEhh80Aill7gNz3MsfTqp8zMBKeHmxS4XNabuU8mmIfftPQTE3suezKM1";
-    string interUnitId = "c94ebd2ab111ea96";
-    string bannerUnitId = "484dbc63f1561533";
+    string sdkKey = "izbW4oEiJA_cdTh6wc0r6Cqyel80b8VaLe1pL0pAKx7TvV9BoLk4F29V4R3OUqiynDPwowsUIsszEb66mbssOZ";
+    string interUnitId = "ac8368d5f98532ac";
+    string bannerUnitId = "1ae27dd80006d6c6";
+    string reward = "6b28d70cd08353c3";
 
     bool isBlockInter = false;
     int blockTime = 60;

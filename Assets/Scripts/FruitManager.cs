@@ -18,11 +18,11 @@ public class FruitManager
         Fruit[] fruits;
         if (PlayerPrefs.GetInt("map_selected", 0) == 0)
         {
-            fruits = Resources.LoadAll<Fruit>("map0");
+            fruits = Resources.LoadAll<Fruit>("SlimeSort");
         }
         else
         {
-            fruits = Resources.LoadAll<Fruit>("map1");
+            fruits = Resources.LoadAll<Fruit>("SlimeSort");
         }
 
         map0 = new Dictionary<int, Fruit>();
@@ -30,7 +30,7 @@ public class FruitManager
         {
             map0.Add(fruits[i].id, fruits[i]);
         }
-        fruits = Resources.LoadAll<Fruit>("map1");
+        fruits = Resources.LoadAll<Fruit>("SlimeSort");
         Debug.Log("Load " + fruits.Length);
     }
     public static Fruit GetFruitById(int id)

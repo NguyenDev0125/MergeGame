@@ -16,12 +16,12 @@ public class FruitSpawnner : MonoBehaviour
     GameObject skill = null;
     private void Awake()
     {
-        listPool = new List<ObjectPool>();
-        for(int i = 0;i < listFruitPrbs.Count;i++)
-        {
-            ObjectPool pool = new ObjectPool(5, listFruitPrbs[i].gameObject);
-            listPool.Add(pool);
-        }
+        //listPool = new List<ObjectPool>();
+        //for(int i = 0;i < listFruitPrbs.Count;i++)
+        //{
+        //    ObjectPool pool = new ObjectPool(5, listFruitPrbs[i].gameObject);
+        //    listPool.Add(pool);
+        //}
         RandomNextFruit();
         currentFruitLevel = nextFruitLevel;
     }
@@ -30,7 +30,7 @@ public class FruitSpawnner : MonoBehaviour
         if (GameManager.Instance.gameState == GameState.GameOver) return;
         if(!useSkill)
         {
-            GameObject go = listPool[currentFruitLevel].GetGOInactive();
+            GameObject go = Instantiate(listFruitPrbs[currentFruitLevel].gameObject); //listPool[currentFruitLevel].GetGOInactive();
             go.transform.position = pos;
             go.SetActive(true);
             go.GetComponent<Fruit>().controller = fruitController;
@@ -49,7 +49,8 @@ public class FruitSpawnner : MonoBehaviour
     public void SpawnFruit(int level , Vector2 pos)
     {
         if (level-1 == listFruitPrbs[listFruitPrbs.Count - 1].id) return;
-        GameObject go = listPool[level].GetGOInactive();
+        Debug.Log(level);
+        GameObject go = Instantiate(listFruitPrbs[level].gameObject);// listPool[level].GetGOInactive();
         go.transform.position = pos;
         go.GetComponent<Fruit>().controller = fruitController;
         go.SetActive(true);

@@ -33,7 +33,7 @@ public class ObjectPool
 
     public GameObject GetGOInactive()
     {
-        foreach(GameObject go in listObj)
+        foreach (GameObject go in listObj)
         {
             if (!go.activeInHierarchy) return go;
         }

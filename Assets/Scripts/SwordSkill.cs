@@ -12,7 +12,7 @@ public class SwordSkill : MonoBehaviour
         efController = FindObjectOfType<EffectController>();
         scoreManager = FindObjectOfType<ScoreController>();
         gameController = FindObjectOfType<GameController>();
-        shaker = FindFirstObjectByType<CameraShaker>();
+        shaker = FindObjectOfType<CameraShaker>();
         SoundManager.Instance.PlaySound(SoundName.Sword);
         Destroy(this.gameObject, 10f);
     }

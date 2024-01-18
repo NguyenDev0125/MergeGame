@@ -1,5 +1,7 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class Fruit : MonoBehaviour
 {
@@ -23,27 +25,52 @@ public class Fruit : MonoBehaviour
     [SerializeField] protected CircleCollider2D cirCol;
     [SerializeField] protected LayerMask fruitLayer;
 
+    [SerializeField]List<SpringJoint2D> listJoints;
+    List<Vector2> listJointsInitPos;
     private void Awake()
     {
         cirCol = GetComponent<CircleCollider2D>();
         normalScale = transform.localScale;
         gameController = FindObjectOfType<GameController>();
+
+        //listJointsInitPos = new List<Vector2>();
+        //for(int i = 0; i < listJoints.Count; i++)
+        //{
+        //    listJointsInitPos.Add(listJoints[i].connectedAnchor);
+        //}
+    }
+    [Button("Load")]
+    private void LoadJoints()
+    {
+        listJoints = new List<SpringJoint2D>();
+        foreach(Transform t in transform)
+        {
+            listJoints.Add(t.GetComponent<SpringJoint2D>());
+        }
     }
     private void OnEnable()
     {
         merged = false;
         isCol = false;
-        //transform.localScale = new Vector2(0.1f, 0.1f);
-        //transform.DOScale(normalScale, 0.3f).SetEase(Ease.OutBack);
+        //Reset();
+        transform.localScale = new Vector2(0.05f, 0.05f);
+        transform.DOScale(normalScale, 0.4f);
     }
-
+    private void Reset()
+    {
+        for (int i = 0; i < listJoints.Count; i++)
+        {
+            listJoints[i].connectedAnchor = listJointsInitPos[i];
+        }
+    }
     public void HideFruit()
     {
         Invoke("Hide", controller.delayMerge);
     }
     protected virtual void Hide()
     {
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
