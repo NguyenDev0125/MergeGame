@@ -8,14 +8,16 @@ public class UnlockNewFruitPanel : MonoBehaviour
     [SerializeField] Button buttonClose;
     [SerializeField] GameObject panel;
     [SerializeField] EffectController effectController;
+    [SerializeField] SlimeUnlockProgressPanel slimeUnlockProgressPanel;
     private void Awake()
     {
         buttonClose.onClick.AddListener(Close);
     }
 
-    public void Open(Sprite spr)
+    public void Open(int id,Sprite spr)
     {
         fruitIcon.sprite = spr;
+        fruitIcon.enabled = false;
         this.gameObject.SetActive(true);
         panel.SetActive(false);
         SoundManager.Instance?.StopBGM();
@@ -23,9 +25,11 @@ public class UnlockNewFruitPanel : MonoBehaviour
         effectController.PlayFirework(() =>
         {
             panel.gameObject.SetActive(true);
+            fruitIcon.enabled = true;
             SoundManager.Instance.PlaySound(SoundName.Victory);
             SoundManager.Instance.PlaySound(SoundName.Clap);
         });
+        slimeUnlockProgressPanel.ShowProgress(id);
     }
     private void Close()
     {

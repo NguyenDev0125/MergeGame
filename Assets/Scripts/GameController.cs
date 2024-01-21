@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     [SerializeField] CoinController coinController;
     [SerializeField] float delaySpawnTime;
     [SerializeField] float delayDestroyAllFruits,delayStartDestroyAllFruit;
+    [SerializeField] BuyMoreSlimePanel buyMoreSlimePanel;
+    [SerializeField] FruitController fruitController;
     bool canSpawnFruit = true;
     float lastSpawnTime;
     bool isUsingSkill = false;
@@ -23,6 +25,32 @@ public class GameController : MonoBehaviour
         touchInputManager.OnDragEvent += OnDrag;
         touchInputManager.OnEndDragEvent += OnEndDrag;
         lastSpawnTime = Time.time;
+        cloud.SetNumText(PlayerData.NumSlime);
+        ReloadGame();
+    }
+    private void ReloadGame()
+    {
+        Debug.Log("Reload game");
+        FruitSaveData[] fruits = SaveLoadManager.GetFruitsDataSaved();
+        if(fruits != null)
+        {
+            for(int i = 0; i  < fruits.Length; i++)
+            {
+                Quaternion rot = Quaternion.Euler(0, 0, fruits[i].rotZ);
+                Fruit frClone = Instantiate(FruitManager.GetFruitById(fruits[i].id) , new Vector2(fruits[i].posX , fruits[i].posY + 1f), rot);
+                frClone.controller = fruitController;
+            }
+        }
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if(pause)
+        {
+            SaveLoadManager.SaveGame();
+            Debug.Log("Save Game");
+        }
+
     }
     private void Start()
     {
@@ -48,14 +76,25 @@ public class GameController : MonoBehaviour
         canSpawnFruit = false;
         Vector2 spawnPos = new Vector2(mousePos.x, fruitSpawnPoint.position.y);
         spawnner.SpawnCurrentFruit(spawnPos);
+
         //SoundManager.Instance.PlaySound(SoundName.SpawnFruit);
         cloud.HideLine();
         cloud.HideHintFruit();
+        if(PlayerData.RemoveAds == 0)
+        {
+            PlayerData.NumSlime--;
+            if (PlayerData.NumSlime <= 0)
+            {
+                buyMoreSlimePanel.Open();
+            }
+        }
+
     }
     private void DisplayHintFruit()
     {
         cloud.SetNextFruitSprite(spawnner.GetNextFruitSprite());
         cloud.SetCurrentFruitSprite(spawnner.GetCurrentFruitSprite());
+        cloud.SetNumText(PlayerData.NumSlime);
     }
 
     public void OnFruitFirstCol()

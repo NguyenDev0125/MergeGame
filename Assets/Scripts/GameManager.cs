@@ -27,6 +27,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
         gameState = GameState.GameOver;
         gameController.DestroyAllFruit();
+        SaveLoadManager.SaveCurrentCoin(0);
+        SaveLoadManager.SaveCurrentScore(0);
+        SaveLoadManager.RemoveGameData();
         SoundManager.Instance.PlaySound(SoundName.GameOver);
     }
     

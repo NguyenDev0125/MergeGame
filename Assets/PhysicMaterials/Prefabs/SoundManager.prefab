@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,7 +52,11 @@ MonoBehaviour:
   listSounds:
   - soundName: 0
     volume: 0.5
-    clip: {fileID: 8300000, guid: aba8758c13836d94a95902c8d820b390, type: 3}
+    clip: {fileID: 8300000, guid: 5d0d5cb95317070469072b32d30724ad, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 0
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 5d0d5cb95317070469072b32d30724ad, type: 3}
     audioSource: {fileID: 0}
   - soundName: 1
     volume: 1
@@ -60,6 +65,10 @@ MonoBehaviour:
   - soundName: 1
     volume: 1
     clip: {fileID: 8300000, guid: dec6a40c0efd089459dcfb128792a735, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 1
+    volume: 1
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
     audioSource: {fileID: 0}
   - soundName: 1
     volume: 1
@@ -86,6 +95,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
     audioSource: {fileID: 0}
   - soundName: 1
+    volume: 1
+    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 2
+    volume: 1
+    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 2
     volume: 1
     clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
     audioSource: {fileID: 0}
@@ -148,6 +165,22 @@ MonoBehaviour:
   - soundName: 14
     volume: 1
     clip: {fileID: 8300000, guid: 6816abb4dcc498b46b08371ef3fd133d, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 16
+    volume: 1
+    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 16
+    volume: 1
+    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 16
+    volume: 1
+    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 16
+    volume: 1
+    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
     audioSource: {fileID: 0}
   - soundName: 16
     volume: 1

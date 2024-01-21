@@ -50,7 +50,7 @@ public class FruitSpawnner : MonoBehaviour
     {
         if (level-1 == listFruitPrbs[listFruitPrbs.Count - 1].id) return;
         Debug.Log(level);
-        GameObject go = Instantiate(listFruitPrbs[level].gameObject);// listPool[level].GetGOInactive();
+        GameObject go = Instantiate(listFruitPrbs[level-1].gameObject);// listPool[level].GetGOInactive();
         go.transform.position = pos;
         go.GetComponent<Fruit>().controller = fruitController;
         go.SetActive(true);

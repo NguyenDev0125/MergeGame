@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using SoftBody2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,11 +43,9 @@ public class Fruit : MonoBehaviour
     [Button("Load")]
     private void LoadJoints()
     {
-        listJoints = new List<SpringJoint2D>();
-        foreach(Transform t in transform)
-        {
-            listJoints.Add(t.GetComponent<SpringJoint2D>());
-        }
+        int i = int.Parse(gameObject.name);
+        id = i;
+        spr = GetComponent<SoftSprite>().Sprite;
     }
     private void OnEnable()
     {
@@ -72,10 +71,6 @@ public class Fruit : MonoBehaviour
         //this.gameObject.SetActive(false);
         Destroy(gameObject);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Wall") return;
@@ -99,8 +94,7 @@ public class Fruit : MonoBehaviour
             this.merged = true;
             fr.merged = true;
             controller.MergeFruit(this, fr);
-            this.HideFruit();
-            fr.HideFruit();
+
         }
     }
 

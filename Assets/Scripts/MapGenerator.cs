@@ -20,7 +20,7 @@ public class MapGenerator : MonoBehaviour
     private void SetupMap()
     {
 
-       ground.transform.localScale = new Vector3(cameraHaftSize.x * 2 + 2f, 2f, 1.5f);
+       //ground.transform.localScale = new Vector3(cameraHaftSize.x * 2 + 2f, 2f, 1.5f);
         ground.transform.position = cameraPos - new Vector2(0f, cameraHaftSize.y - 2f);
         leftBound.transform.localScale = new Vector3(1f, cameraHaftSize.y * 2f, 1f);
         rightBound.transform.localScale = leftBound.transform.localScale;
@@ -30,6 +30,6 @@ public class MapGenerator : MonoBehaviour
 
         fruitSpawnPoint.transform.position = cameraPos + new Vector2(0f,cameraHaftSize.y - 5.5f);
         redZone.transform.position = fruitSpawnPoint.transform.position - new Vector3(0, 0.5f);
-        redZone.transform.localScale = new Vector2(cameraHaftSize.x * 2, redZone.transform.localScale.y);
+        //redZone.transform.localScale = new Vector2(cameraHaftSize.x * 2, redZone.transform.localScale.y);
     }
 }

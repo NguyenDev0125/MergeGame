@@ -8,9 +8,10 @@ using UnityEngine.UI;
 
 public class HomeUIController : MonoBehaviour
 {
-    [SerializeField] Button startBtn,noAds,shop,earnCoin;
+    [SerializeField] Button startBtn,noAds,shop,skinShop;
     [SerializeField] Transform logo;
     [SerializeField] FruitShop fruitShop;
+    [SerializeField] ShopSkinPanel skinPanel;
     [SerializeField] private float floatingDistance = 0.2f;
     [SerializeField] private float floatingDuration = 2f;
     [SerializeField] HorizontalLayoutGroup horizontalLayoutGroup;
@@ -24,7 +25,7 @@ public class HomeUIController : MonoBehaviour
         startBtnInitPos = startBtn.transform.position;
         noAds.onClick.AddListener(OpenDialogNoAd);
         shop.onClick.AddListener(OpenFruitShop);
-        earnCoin.onClick.AddListener(OpenEarnCoinPanel);
+        skinShop.onClick.AddListener(OpenSkinShop);
         UpdateText();
     }
     private void Start()
@@ -67,7 +68,7 @@ public class HomeUIController : MonoBehaviour
         int map = PlayerPrefs.GetInt("map_selected", 0);
         if(map == 0)
         {
-            SceneManager.LoadScene("Map0");
+            SceneManager.LoadScene("Map1");
         }
         else if(map == 1)
         {
@@ -86,8 +87,8 @@ public class HomeUIController : MonoBehaviour
 
     }
 
-    private void OpenEarnCoinPanel()
+    private void OpenSkinShop()
     {
-
+        skinPanel.Open();
     }
 }

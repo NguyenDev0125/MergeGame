@@ -23,11 +23,14 @@ public class MaxManager : MonoSingleton<MaxManager>
         {
             InitInterAd();
             InitBannerAd();
+            InitRewardAd();
             MaxSdkCallbacks.Banner.OnAdLoadedEvent += OnBannerLoaded;
             MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent += OnInterDisplayed;
+            MaxSdkCallbacks.Rewarded.OnAdReceivedRewardEvent += OnAdReceivedRewardEvent;
         };
         MaxSdk.SetSdkKey(sdkKey);
         MaxSdk.SetUserId("USER_ID");
+        MaxSdk.ShowMediationDebugger();
         MaxSdk.InitializeSdk();
     }
 
@@ -109,4 +112,35 @@ public class MaxManager : MonoSingleton<MaxManager>
     {
 
     }
+
+    private void InitRewardAd()
+    {
+        LoadRewardAd();
+    }
+
+    private void LoadRewardAd()
+    {
+        MaxSdk.LoadRewardedAd(reward);
+    }
+
+    public event Action OnReceiveReward;
+    public void ShowReward(Action callback)
+    {
+        if (MaxSdk.IsRewardedAdReady(reward))
+        {
+            OnReceiveReward = callback;
+            MaxSdk.ShowRewardedAd(reward);
+
+        }
+        else
+        {
+            LoadRewardAd();
+        }
+    }
+    private void OnAdReceivedRewardEvent(string mgs,  MaxSdk.Reward  rw, MaxSdk.AdInfo info)
+    {
+        OnReceiveReward?.Invoke();
+    }
+
+
 }

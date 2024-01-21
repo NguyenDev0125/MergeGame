@@ -105,7 +105,7 @@ namespace SoftBody2D.Editor
 				positionOffsetChanged = EditorGUI.EndChangeCheck();
 				
 				EditorGUI.BeginChangeCheck();
-				EditorGUILayout.Slider(collidersOffset, 0.0001f, 3f, new GUIContent("Colliders Offset"));
+				EditorGUILayout.Slider(collidersOffset, 0.0001f, 7f, new GUIContent("Colliders Offset"));
 				collidersOffsetChanged = EditorGUI.EndChangeCheck();
 			}
 			

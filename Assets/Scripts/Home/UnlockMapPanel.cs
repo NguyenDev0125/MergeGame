@@ -43,12 +43,23 @@ public class UnlockMapPanel : MonoBehaviour
         for (int i = map.fruits.Count-1; i >= 0; i--)
         {
             FruitItem item = Instantiate(itemPrb, scrollRect.content);
-            bool unLocked = PlayerPrefs.GetInt("fruit_" + map.id+ map.fruits[i].id.ToString()) == 1 || map.fruits[i].defaultUnlocked;
+            bool unLocked = PlayerPrefs.GetInt("fruit_"+map.fruits[i].id.ToString()) == 1 || map.fruits[i].defaultUnlocked;
             item.SetItem(unLocked, map.fruits[i].fruitName, map.fruits[i].Sprite);
             item.gameObject.SetActive(true);
         }
         coinText.text = map.coinPrice.ToString();
         moneyText.text = map.moneyPrice.ToString() + "$";
+        if(map.coinPrice == 0)
+        {
+            buyMoney.gameObject.SetActive(false);
+            buyCoin.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            buyMoney.gameObject.SetActive(true);
+            buyCoin.gameObject.SetActive(true);
+        }
         panel.gameObject.SetActive(true);
 
     }

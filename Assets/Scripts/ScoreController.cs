@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoreController : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ScoreController : MonoBehaviour
     [SerializeField] int shakeScoreCondition = 4;
     int streak = 0;
     float timer = 0f;
+    private void Awake()
+    {
+        scorePanel.UpdateScoreText(scoreManager.GetScore());
+    }
     public void AddScore(int score)
     {
         timer = keepStreakTime;

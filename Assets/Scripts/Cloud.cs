@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class Cloud : MonoBehaviour
     [SerializeField] Image nextFruitSpriteR;
     [SerializeField] Image currentFruitR;
     [SerializeField] LineRenderer lineRenderer;
-
+    [SerializeField] TextMeshProUGUI numText;
     bool isShowLine = false;
     Vector3 currentFruitInitScale;
     Vector3 nextFruitInitScale;
@@ -32,6 +33,14 @@ public class Cloud : MonoBehaviour
         currentFruitR.transform.DOScale(currentFruitInitScale, 0.3f);
         currentFruitR.sprite = spr;
         currentFruitR.gameObject.SetActive(true);
+    }
+    public void SetNumText(int num)
+    {
+        numText.text = num.ToString();
+        if(PlayerData.RemoveAds == 1)
+        {
+            numText.gameObject.SetActive(false);
+        }
     }
     public void HideLine()
     {

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FruitController : MonoBehaviour
@@ -12,24 +13,32 @@ public class FruitController : MonoBehaviour
     [SerializeField] int levelMax;
     [SerializeField] int levelMedium;
     [SerializeField] UnlockNewFruitPanel unlockFrPanel;
+    [SerializeField] QuestPanel questPanel;
+
+    List<Fruit> listFruits;
 
     public void MergeFruit(Fruit fruit1 , Fruit fruit2)
     {
         if (GameManager.Instance.gameState == GameState.GameOver) return;
-        StartCoroutine(Merge( fruit1.id , fruit1.scoreToAdd,fruit1.transform.position, fruit2.transform.position));
+        fruit1.HideFruit();
+        fruit2.HideFruit();
+        StartCoroutine(Merge(fruit1.id , fruit1.scoreToAdd,fruit1.transform.position, fruit2.transform.position));
     }
 
     public IEnumerator Merge(int id , int sc, Vector2 pos1, Vector2 pos2)
     {
         int level = id;
         yield return new WaitForSeconds(delayMerge);
+
         Vector2 newPos = (pos1 + pos2) / 2;
+        questPanel.OnSlimeExplode(id, pos1, pos2);
         spawnner.SpawnFruit(++level, newPos);
-        if(PlayerPrefs.GetInt("fruit_" + PlayerPrefs.GetInt("map_selected", 0) + level, 0) == 0 && FruitManager.GetFruitById(level).defaultUnlocked == false)
+
+        if(PlayerPrefs.GetInt("fruit_" +  level, 0) == 0 && FruitManager.GetFruitById(level).defaultUnlocked == false)
         {
             Debug.Log("Unlock " + level);
-            PlayerPrefs.SetInt("fruit_" + PlayerPrefs.GetInt("map_selected",0) + level, 1);
-            unlockFrPanel.Open(FruitManager.GetFruitById(level).Sprite);
+            PlayerPrefs.SetInt("fruit_" +  level, 1);
+            unlockFrPanel.Open(level,FruitManager.GetFruitById(level).Sprite);
         }
         if(level == levelMax)
         {

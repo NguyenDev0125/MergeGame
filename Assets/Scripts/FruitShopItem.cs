@@ -14,10 +14,6 @@ public class FruitShopItem : MonoBehaviour
     private void Awake()
     {
         FruitShop fruitShop = FindObjectOfType<FruitShop>();
-        button1.onClick.AddListener(() =>
-        {
-            fruitShop.BuyItem(type1, buyType1, num1, 0 , money1);
-        });
 
     }
 

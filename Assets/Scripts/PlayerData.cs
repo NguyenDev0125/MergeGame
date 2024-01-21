@@ -70,4 +70,49 @@ public class PlayerData : MonoBehaviour
             PlayerPrefs.SetInt("vibrate", value == true ? 1 : 0);
         }
     }
+
+    public static bool IsSkinUnlocked(string skinId)
+    {
+        return PlayerPrefs.GetInt("SpawnnerSkin_" + skinId, 0) == 1;
+    }
+
+    public static void UnLockSkin(string id)
+    {
+        PlayerPrefs.SetInt("SpawnnerSkin_" + id, 1);
+    }
+
+    public static int GetNumSlimeById(int id)
+    {
+        return PlayerPrefs.GetInt("Slime_num_" + id, 0);
+    }
+
+    public static void SetNumSlime(int id, int value)
+    {
+        PlayerPrefs.SetInt("Slime_num_" + id, value);
+    }
+
+    public static string SelectedSkin
+    {
+        get
+        {
+            return PlayerPrefs.GetString("Selected_skin", "0");
+        }
+
+        set
+        {
+            PlayerPrefs.SetString("Selected_skin", value);
+        }
+    }
+
+    public static int NumSlime
+    {
+        get
+        {
+            return PlayerPrefs.GetInt("NumSmile", 10);
+        }
+        set
+        {
+            PlayerPrefs.SetInt("NumSmile",value);
+        }
+    }
 }
