@@ -20,7 +20,7 @@ public class PlayerData : MonoBehaviour
 
     public static int Coin
     {
-        get { return PlayerPrefs.GetInt("gold", 10000); }
+        get { return PlayerPrefs.GetInt("gold", 0); }
         set { PlayerPrefs.SetInt("gold", value); }
     }
 

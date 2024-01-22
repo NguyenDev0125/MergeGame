@@ -1841,19 +1841,19 @@ struct TypeInformation_tBAA2819DD869179F8DFB0A658547229B4C7D6E15  : public Runti
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
 	// System.String System.Uri::m_String
-	String_t* ___m_String_13;
+	String_t* ___m_String_16;
 	// System.String System.Uri::m_originalUnicodeString
-	String_t* ___m_originalUnicodeString_14;
+	String_t* ___m_originalUnicodeString_17;
 	// System.UriParser System.Uri::m_Syntax
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
 	// System.String System.Uri::m_DnsSafeHost
-	String_t* ___m_DnsSafeHost_16;
+	String_t* ___m_DnsSafeHost_19;
 	// System.Uri/Flags System.Uri::m_Flags
-	uint64_t ___m_Flags_17;
+	uint64_t ___m_Flags_20;
 	// System.Uri/UriInfo System.Uri::m_Info
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
 	// System.Boolean System.Uri::m_iriParsing
-	bool ___m_iriParsing_19;
+	bool ___m_iriParsing_22;
 };
 
 // System.ValueType
@@ -3857,23 +3857,23 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	// System.String System.Uri::SchemeDelimiter
 	String_t* ___SchemeDelimiter_12;
 	// System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) System.Uri::s_ConfigInitialized
-	bool ___s_ConfigInitialized_20;
+	bool ___s_ConfigInitialized_23;
 	// System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) System.Uri::s_ConfigInitializing
-	bool ___s_ConfigInitializing_21;
+	bool ___s_ConfigInitializing_24;
 	// System.UriIdnScope modreq(System.Runtime.CompilerServices.IsVolatile) System.Uri::s_IdnScope
-	int32_t ___s_IdnScope_22;
+	int32_t ___s_IdnScope_25;
 	// System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) System.Uri::s_IriParsing
-	bool ___s_IriParsing_23;
+	bool ___s_IriParsing_26;
 	// System.Boolean System.Uri::useDotNetRelativeOrAbsolute
-	bool ___useDotNetRelativeOrAbsolute_24;
+	bool ___useDotNetRelativeOrAbsolute_27;
 	// System.Boolean System.Uri::IsWindowsFileSystem
-	bool ___IsWindowsFileSystem_25;
+	bool ___IsWindowsFileSystem_29;
 	// System.Object System.Uri::s_initLock
-	RuntimeObject* ___s_initLock_26;
+	RuntimeObject* ___s_initLock_30;
 	// System.Char[] System.Uri::HexLowerChars
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
 	// System.Char[] System.Uri::_WSchars
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 
 // System.Uri
@@ -20712,7 +20712,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FSharpUtils__ctor_m9824778422EAFFB89C8FC
 		Assembly_t* L_1 = ___0_fsharpCoreAssembly;
 		NullCheck(L_1);
 		Type_t* L_2;
-		L_2 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_1, _stringLiteral191622F509097F2FCB595D5FC78BA99C9F397DDE);
+		L_2 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_1, _stringLiteral191622F509097F2FCB595D5FC78BA99C9F397DDE);
 		Type_t* L_3 = L_2;
 		il2cpp_codegen_runtime_class_init_inline(FSharpUtils_t6E5D3F084219E7DE1901A716A194B2237A7A99AD_il2cpp_TypeInfo_var);
 		MethodInfo_t* L_4;
@@ -20739,7 +20739,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FSharpUtils__ctor_m9824778422EAFFB89C8FC
 		Assembly_t* L_12 = ___0_fsharpCoreAssembly;
 		NullCheck(L_12);
 		Type_t* L_13;
-		L_13 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_12, _stringLiteral03240CCFCA588F834F0D4346FC80A8CB5E79695D);
+		L_13 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_12, _stringLiteral03240CCFCA588F834F0D4346FC80A8CB5E79695D);
 		V_2 = L_13;
 		Type_t* L_14 = V_2;
 		MethodCall_2_t442B9ECE1B9ABC22BDFC90B2BB9048805D1D2270* L_15;
@@ -20756,7 +20756,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FSharpUtils__ctor_m9824778422EAFFB89C8FC
 		Assembly_t* L_20 = ___0_fsharpCoreAssembly;
 		NullCheck(L_20);
 		Type_t* L_21;
-		L_21 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_20, _stringLiteral1706A972A45E7E0E7BC14717526F35BAE9546192);
+		L_21 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_20, _stringLiteral1706A972A45E7E0E7BC14717526F35BAE9546192);
 		V_3 = L_21;
 		ReflectionDelegateFactory_t33E37F4C07B3A1F415AA97A5C5F7F5A1662A8574* L_22;
 		L_22 = JsonTypeReflector_get_ReflectionDelegateFactory_m924B16B5A02C8F4815333C06D1BD731450980A51(NULL);
@@ -20801,7 +20801,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FSharpUtils__ctor_m9824778422EAFFB89C8FC
 		Assembly_t* L_38 = ___0_fsharpCoreAssembly;
 		NullCheck(L_38);
 		Type_t* L_39;
-		L_39 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_38, _stringLiteral01385C410406BC5C6E613A5C7CEFFAADC5A9E11D);
+		L_39 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_38, _stringLiteral01385C410406BC5C6E613A5C7CEFFAADC5A9E11D);
 		V_4 = L_39;
 		Type_t* L_40 = V_4;
 		NullCheck(L_40);
@@ -20812,7 +20812,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FSharpUtils__ctor_m9824778422EAFFB89C8FC
 		Assembly_t* L_42 = ___0_fsharpCoreAssembly;
 		NullCheck(L_42);
 		Type_t* L_43;
-		L_43 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_42, _stringLiteralB1BADF651F72DA9740CFF018B33A84A8FE0940FC);
+		L_43 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_42, _stringLiteralB1BADF651F72DA9740CFF018B33A84A8FE0940FC);
 		__this->____mapType_3 = L_43;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____mapType_3), (void*)L_43);
 		return;
@@ -21428,7 +21428,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ImmutableCollectionsUtils_TryBuildImmuta
 		L_16 = ImmutableCollectionTypeInfo_get_CreatedTypeName_mB6C5E4C0083F30B8A3E973B27B1743BA72E01688_inline(L_15, NULL);
 		NullCheck(L_14);
 		Type_t* L_17;
-		L_17 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_14, L_16);
+		L_17 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_14, L_16);
 		V_3 = L_17;
 		Type_t* L_18 = V_1;
 		Assembly_t* L_19;
@@ -21439,7 +21439,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ImmutableCollectionsUtils_TryBuildImmuta
 		L_21 = ImmutableCollectionTypeInfo_get_BuilderTypeName_m45D8747B2EECD911E9B60C009A1E6A5FA2CC0416_inline(L_20, NULL);
 		NullCheck(L_19);
 		Type_t* L_22;
-		L_22 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_19, L_21);
+		L_22 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_19, L_21);
 		V_4 = L_22;
 		Type_t* L_23 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
@@ -21635,7 +21635,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ImmutableCollectionsUtils_TryBuildImmuta
 		L_16 = ImmutableCollectionTypeInfo_get_CreatedTypeName_mB6C5E4C0083F30B8A3E973B27B1743BA72E01688_inline(L_15, NULL);
 		NullCheck(L_14);
 		Type_t* L_17;
-		L_17 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_14, L_16);
+		L_17 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_14, L_16);
 		V_3 = L_17;
 		Type_t* L_18 = V_1;
 		Assembly_t* L_19;
@@ -21646,7 +21646,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ImmutableCollectionsUtils_TryBuildImmuta
 		L_21 = ImmutableCollectionTypeInfo_get_BuilderTypeName_m45D8747B2EECD911E9B60C009A1E6A5FA2CC0416_inline(L_20, NULL);
 		NullCheck(L_19);
 		Type_t* L_22;
-		L_22 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_19, L_21);
+		L_22 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(19 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_19, L_21);
 		V_4 = L_22;
 		Type_t* L_23 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);

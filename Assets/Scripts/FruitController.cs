@@ -20,6 +20,7 @@ public class FruitController : MonoBehaviour
     public void MergeFruit(Fruit fruit1 , Fruit fruit2)
     {
         if (GameManager.Instance.gameState == GameState.GameOver) return;
+
         fruit1.HideFruit();
         fruit2.HideFruit();
         StartCoroutine(Merge(fruit1.id , fruit1.scoreToAdd,fruit1.transform.position, fruit2.transform.position));
@@ -33,7 +34,7 @@ public class FruitController : MonoBehaviour
         Vector2 newPos = (pos1 + pos2) / 2;
         questPanel.OnSlimeExplode(id, pos1, pos2);
         spawnner.SpawnFruit(++level, newPos);
-
+        PlayerData.SetNumSlime(id  , PlayerData.GetNumSlimeById(id) + 2);
         if(PlayerPrefs.GetInt("fruit_" +  level, 0) == 0 && FruitManager.GetFruitById(level).defaultUnlocked == false)
         {
             Debug.Log("Unlock " + level);
@@ -63,5 +64,7 @@ public class FruitController : MonoBehaviour
         effectController.PlayTextPopup(score.ToString(), newPos);
         scoreController.AddScore(score);
         coinController.AddScore(sc, pos1);
+
+
     }
 }

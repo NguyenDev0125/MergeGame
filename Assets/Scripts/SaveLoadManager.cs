@@ -17,6 +17,8 @@ public class SaveLoadManager
         }
         json = JsonConvert.SerializeObject(listFrData);
         PlayerPrefs.SetString("Game_data" , json);
+        Debug.Log("Save game");
+        Debug.Log(json);
     }
 
     public static void RemoveGameData()
@@ -28,6 +30,8 @@ public class SaveLoadManager
     {
         string json = PlayerPrefs.GetString("Game_data", "");
         FruitSaveData[] listId = JsonConvert.DeserializeObject<FruitSaveData[]>(json);
+        Debug.Log("Load");
+        Debug.Log(json);
         return listId;
     }
 
@@ -52,7 +56,7 @@ public class SaveLoadManager
     }
 }
 
-public struct FruitSaveData
+public class FruitSaveData
 {
     public int id;
     public float posX, posY;

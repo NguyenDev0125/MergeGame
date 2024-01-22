@@ -32,6 +32,8 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Sirenix_OdinInspector_Attributes_Cod
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Sirenix_Serialization_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Sirenix_Serialization_Config_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Sirenix_Utilities_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_StompyRobot_SRDebugger_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_StompyRobot_SRF_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_Configuration_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_Core_CodeGenModule;
@@ -48,6 +50,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_CoreModule_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_GridModule_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_IMGUIModule_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_ImageConversionModule_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_InputLegacyModule_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_JSONSerializeModule_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_ParticleSystemModule_CodeGenModule;
@@ -88,7 +91,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_TextMeshPro_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g___Generated_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_mscorlib_CodeGenModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule* g_CodeGenModules[];
-const Il2CppCodeGenModule* g_CodeGenModules[69] = 
+const Il2CppCodeGenModule* g_CodeGenModules[72] = 
 {
 	(&g_AssemblyU2DCSharp_CodeGenModule),
 	(&g_CFXRDemo_CodeGenModule),
@@ -104,6 +107,8 @@ const Il2CppCodeGenModule* g_CodeGenModules[69] =
 	(&g_Sirenix_Serialization_CodeGenModule),
 	(&g_Sirenix_Serialization_Config_CodeGenModule),
 	(&g_Sirenix_Utilities_CodeGenModule),
+	(&g_StompyRobot_SRDebugger_CodeGenModule),
+	(&g_StompyRobot_SRF_CodeGenModule),
 	(&g_System_CodeGenModule),
 	(&g_System_Configuration_CodeGenModule),
 	(&g_System_Core_CodeGenModule),
@@ -120,6 +125,7 @@ const Il2CppCodeGenModule* g_CodeGenModules[69] =
 	(&g_UnityEngine_CoreModule_CodeGenModule),
 	(&g_UnityEngine_GridModule_CodeGenModule),
 	(&g_UnityEngine_IMGUIModule_CodeGenModule),
+	(&g_UnityEngine_ImageConversionModule_CodeGenModule),
 	(&g_UnityEngine_InputLegacyModule_CodeGenModule),
 	(&g_UnityEngine_JSONSerializeModule_CodeGenModule),
 	(&g_UnityEngine_ParticleSystemModule_CodeGenModule),
@@ -165,18 +171,18 @@ const Il2CppCodeRegistration g_CodeRegistration =
 {
 	10,
 	g_ReversePInvokeWrapperPointers,
-	39569,
+	40305,
 	g_Il2CppGenericMethodPointers,
 	g_Il2CppGenericAdjustorThunks,
-	8442,
+	8540,
 	g_Il2CppInvokerPointers,
-	1473,
+	1488,
 	g_UnresolvedVirtualMethodPointers,
-	494,
+	502,
 	g_Il2CppInteropData,
 	0,
 	NULL,
-	69,
+	72,
 	g_CodeGenModules,
 };
 IL2CPP_EXTERN_C_CONST Il2CppMetadataRegistration g_MetadataRegistration;

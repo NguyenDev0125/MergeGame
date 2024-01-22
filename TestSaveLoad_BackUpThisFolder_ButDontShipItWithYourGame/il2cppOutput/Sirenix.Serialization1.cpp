@@ -16273,7 +16273,7 @@ IL_0071:
 			Assembly_t* L_18 = V_2;
 			NullCheck(L_18);
 			AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_19;
-			L_19 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(20 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_18);
+			L_19 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(21 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_18);
 			NullCheck(L_19);
 			String_t* L_20;
 			L_20 = AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline(L_19, NULL);
@@ -16327,7 +16327,7 @@ IL_00ba_1:
 			Assembly_t* L_29 = V_2;
 			NullCheck(L_29);
 			AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_30;
-			L_30 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(20 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_29);
+			L_30 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(21 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_29);
 			NullCheck(L_30);
 			String_t* L_31;
 			L_31 = AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline(L_30, NULL);
@@ -16706,7 +16706,7 @@ CATCH_02fb:
 			Assembly_t* L_127 = V_2;
 			NullCheck(L_127);
 			AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_128;
-			L_128 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(20 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_127);
+			L_128 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(21 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_127);
 			NullCheck(L_128);
 			String_t* L_129;
 			L_129 = AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline(L_128, NULL);
@@ -16741,7 +16741,7 @@ CATCH_032f:
 			Assembly_t* L_134 = V_2;
 			NullCheck(L_134);
 			AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_135;
-			L_135 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(20 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_134);
+			L_135 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(21 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_134);
 			NullCheck(L_135);
 			String_t* L_136;
 			L_136 = AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline(L_135, NULL);
@@ -16776,7 +16776,7 @@ CATCH_0363:
 			Assembly_t* L_141 = V_2;
 			NullCheck(L_141);
 			AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_142;
-			L_142 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(20 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_141);
+			L_142 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(21 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_141);
 			NullCheck(L_142);
 			String_t* L_143;
 			L_143 = AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline(L_142, NULL);

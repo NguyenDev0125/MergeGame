@@ -42,16 +42,6 @@ public class GameController : MonoBehaviour
             }
         }
     }
-
-    private void OnApplicationPause(bool pause)
-    {
-        if(pause)
-        {
-            SaveLoadManager.SaveGame();
-            Debug.Log("Save Game");
-        }
-
-    }
     private void Start()
     {
         DisplayHintFruit();

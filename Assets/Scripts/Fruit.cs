@@ -78,6 +78,7 @@ public class Fruit : MonoBehaviour
         {
             isCol = true;
             gameController.OnFruitFirstCol();
+            SaveLoadManager.SaveGame();
             SoundManager.Instance?.PlaySound(SoundName.Bounce);
 
         }
