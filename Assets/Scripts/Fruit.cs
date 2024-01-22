@@ -80,7 +80,6 @@ public class Fruit : MonoBehaviour
             gameController.OnFruitFirstCol();
             SaveLoadManager.SaveGame();
             SoundManager.Instance?.PlaySound(SoundName.Bounce);
-
         }
         if (merged) return;
         TryMergeFruit(collider.gameObject);

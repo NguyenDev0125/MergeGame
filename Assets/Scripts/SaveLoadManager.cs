@@ -10,6 +10,7 @@ public class SaveLoadManager
         FruitSaveData[] listFrData = new FruitSaveData[fruits.Length];
         for(int i = 0; i < fruits.Length; i++)
         {
+            listFrData[i] = new FruitSaveData();
             listFrData[i].id = fruits[i].id;
             listFrData[i].posX = fruits[i].transform.position.x;
             listFrData[i].posY = fruits[i].transform.position.y;

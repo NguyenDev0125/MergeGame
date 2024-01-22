@@ -68,6 +68,22 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - soundName: 1
     volume: 1
+    clip: {fileID: 8300000, guid: dec6a40c0efd089459dcfb128792a735, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 1
+    volume: 1
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 1
+    volume: 1
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 1
+    volume: 1
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: 1
+    volume: 1
     clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
     audioSource: {fileID: 0}
   - soundName: 1

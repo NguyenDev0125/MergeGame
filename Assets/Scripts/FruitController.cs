@@ -51,7 +51,7 @@ public class FruitController : MonoBehaviour
         else if(level >= levelMedium)
         {
             effectController.Play(EffectName.magicSmoke , newPos , Vector3.one);
-            SoundManager.Instance?.PlaySound(SoundName.MergeFruit2, 1);
+            SoundManager.Instance?.PlaySound(SoundName.MergeFruit, 1);
             VibrateManager.Vibrate(70, 20);
         }
         else
