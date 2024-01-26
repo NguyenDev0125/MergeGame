@@ -31,8 +31,8 @@ public class SaveLoadManager
         string json = PlayerPrefs.GetString("Game_data", "");
         FruitSaveData[] listId = JsonConvert.DeserializeObject<FruitSaveData[]>(json);
         Debug.Log("Load");
-        Debug.Log(json);
         return listId;
+
     }
 
     public static void SaveCurrentCoin(int value)

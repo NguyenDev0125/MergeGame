@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HomeUIController : MonoBehaviour
@@ -21,10 +20,14 @@ public class HomeUIController : MonoBehaviour
     [SerializeField] Ease buttonEase;
     [SerializeField] TextMeshProUGUI coin, boom, sword;
     [SerializeField] LoadingScreen loadingScreen;
+    [SerializeField] protected Canvas MainCV;
     private void Awake()
     {
         Application.targetFrameRate = 60;
-        startBtn.onClick.AddListener(StartGame);
+        startBtn.onClick.AddListener(delegate
+        {
+            HideUI();
+        });
         startBtnInitPos = startBtn.transform.position;
         noAds.onClick.AddListener(OpenDialogNoAd);
         shop.onClick.AddListener(OpenFruitShop);
@@ -70,12 +73,15 @@ public class HomeUIController : MonoBehaviour
         boom.text = PlayerData.NumBoom.ToString();
         sword.text = PlayerData.NumSword.ToString();
     }
-    private void StartGame()
+    public void HideUI()
     {
-        Debug.Log("Play");
-        loadingScreen.StartLoading(5);
-        SceneManager.LoadSceneAsync("map1");
+        this.MainCV.gameObject.SetActive(false);
+        Debug.LogError("Done");
+    }
 
+    public void ShowUI()
+    {
+        this.MainCV.gameObject.SetActive(true);
     }
     private void OpenFruitShop()
     {

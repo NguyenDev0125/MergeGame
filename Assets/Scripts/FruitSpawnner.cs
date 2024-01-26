@@ -56,7 +56,7 @@ public class FruitSpawnner : MonoBehaviour
 
     public Color GetNextFruitColor()
     {
-        return listFruitPrbs[nextFruitLevel].Color;
+        return listFruitPrbs[currentFruitLevel].Color;
     }
     public Sprite GetNextFruitSprite()
     {

@@ -8,7 +8,7 @@ public class Tutorial : MonoBehaviour
     {
         if(!PlayerData.IsFirstPlay)
         {
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
         }
         transform.position = poin1;
         transform.DOMove(point2, 2f).SetLoops(-1,LoopType.Yoyo);

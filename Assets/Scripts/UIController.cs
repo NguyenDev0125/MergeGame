@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     [SerializeField] InGameBuyItemPanel buyPanel;
     [SerializeField] Transform hand;
     [SerializeField] Transform startHandMovePos;
+    [SerializeField] HomeUIController homeUIController;
     private void Awake()
     {
         useBoomBtn.onClick.AddListener(OnUseBoomClick);
@@ -58,7 +59,7 @@ public class UIController : MonoBehaviour
     {
         ConfirmDialog.Instance?.ShowDialog("Do you want back to home ", () =>
         {
-            SceneManager.LoadScene("Home");
+            homeUIController.ShowUI();
         });
     }
     private void OnUseBoomClick()

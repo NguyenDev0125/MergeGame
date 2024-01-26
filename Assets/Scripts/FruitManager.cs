@@ -34,7 +34,7 @@ public class FruitManager
     }
     public static Fruit GetFruitById(int id)
     {
-        if(!resourceLoaded)
+        if(map0 == null)
         {
             LoadResource();
         }
