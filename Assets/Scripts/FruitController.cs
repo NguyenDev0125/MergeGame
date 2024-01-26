@@ -25,7 +25,6 @@ public class FruitController : MonoBehaviour
         fruit2.HideFruit();
         StartCoroutine(Merge(fruit1.id , fruit1.scoreToAdd,fruit1.transform.position, fruit2.transform.position));
     }
-
     public IEnumerator Merge(int id , int sc, Vector2 pos1, Vector2 pos2)
     {
         int level = id;

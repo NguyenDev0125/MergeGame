@@ -68,74 +68,6 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - soundName: 1
     volume: 1
-    clip: {fileID: 8300000, guid: dec6a40c0efd089459dcfb128792a735, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 2
-    volume: 1
-    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 1
-    volume: 1
-    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 2
-    volume: 1
-    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 2
-    volume: 1
-    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 2
-    volume: 1
-    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 2
-    volume: 1
-    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 2
-    volume: 1
-    clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 2
-    volume: 1
     clip: {fileID: 8300000, guid: dd9e031a05caf0740b899d66e78db571, type: 3}
     audioSource: {fileID: 0}
   - soundName: 2
@@ -156,7 +88,7 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - soundName: 7
     volume: 1
-    clip: {fileID: 8300000, guid: 36d51dcd3355c7e4e8ba9135b7c44794, type: 3}
+    clip: {fileID: 8300000, guid: ccd11b19fc98ea249b30a2afabfdb8a6, type: 3}
     audioSource: {fileID: 0}
   - soundName: 10
     volume: 1
@@ -181,26 +113,6 @@ MonoBehaviour:
   - soundName: 14
     volume: 1
     clip: {fileID: 8300000, guid: 6816abb4dcc498b46b08371ef3fd133d, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 16
-    volume: 1
-    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 16
-    volume: 1
-    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 16
-    volume: 1
-    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 16
-    volume: 1
-    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
-    audioSource: {fileID: 0}
-  - soundName: 16
-    volume: 1
-    clip: {fileID: 8300000, guid: 63a35357694434e4eaabbfbb96ebf13b, type: 3}
     audioSource: {fileID: 0}
   - soundName: 16
     volume: 1

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,8 +20,10 @@ public class HomeUIController : MonoBehaviour
     [SerializeField] List<Transform> listBtn;
     [SerializeField] Ease buttonEase;
     [SerializeField] TextMeshProUGUI coin, boom, sword;
+    [SerializeField] LoadingScreen loadingScreen;
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         startBtn.onClick.AddListener(StartGame);
         startBtnInitPos = startBtn.transform.position;
         noAds.onClick.AddListener(OpenDialogNoAd);
@@ -30,6 +33,10 @@ public class HomeUIController : MonoBehaviour
     }
     private void Start()
     {
+        if (PlayerData.IsFirstPlay)
+        {
+            FirebaseManager.LogEvent("FruitOpenHome");
+        }
         float targetY = startBtnInitPos.y + floatingDistance;
         startBtn.transform.DOMoveY(targetY, floatingDuration)
             .SetLoops(-1, LoopType.Yoyo)
@@ -65,18 +72,11 @@ public class HomeUIController : MonoBehaviour
     }
     private void StartGame()
     {
-        int map = PlayerPrefs.GetInt("map_selected", 0);
-        if(map == 0)
-        {
-            SceneManager.LoadScene("Map1");
-        }
-        else if(map == 1)
-        {
-            SceneManager.LoadScene("Map1");
-        }
+        Debug.Log("Play");
+        loadingScreen.StartLoading(5);
+        SceneManager.LoadSceneAsync("map1");
 
     }
-
     private void OpenFruitShop()
     {
         fruitShop.ShowShop();

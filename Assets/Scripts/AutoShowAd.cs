@@ -6,9 +6,13 @@ public class AutoShowAd : MonoBehaviour
 {
     [SerializeField] float delayStartShowAd;
     [SerializeField] float delayShowAd;
-    [SerializeField] TextMeshProUGUI breakingTimeText;
+    [SerializeField] SmallAdsPopup popup;
     private void Start()
     {
+        if(PlayerData.RemoveAds == 1)
+        {
+            return;
+        }
         Invoke("AutoShowAds",delayStartShowAd);
     }
     private void AutoShowAds()
@@ -19,21 +23,10 @@ public class AutoShowAd : MonoBehaviour
     {
         for (int i = 0; i < 30; i++)
         {
-            StartCoroutine(IE_ShowAd());
+            popup.Open();
             yield return new WaitForSeconds(delayShowAd);
         }
     }
 
-    private IEnumerator IE_ShowAd()
-    {
-        breakingTimeText.gameObject.SetActive(true);
-        for(int i = 7; i >= 0; i--)
-        {
-            breakingTimeText.text = $"Breaking time after {i}s";
-            yield return new WaitForSeconds(1f);
-        }
-        breakingTimeText.gameObject.SetActive(false);
-        MaxManager.Instance.ShowInterAd();
-    }
 
 }

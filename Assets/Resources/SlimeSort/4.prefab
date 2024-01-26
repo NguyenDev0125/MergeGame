@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259294726243426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.30021834, y: -0.6605967, z: 0}
+  m_LocalPosition: {x: 0.29031888, y: -0.6532312, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70,7 +70,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.30021834, y: -0.6605967}
+  m_ConnectedAnchor: {x: 0.29031888, y: -0.6532312}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -90,7 +90,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259295120636454
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259295120636454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47021344, y: 0.40267733, z: 0}
+  m_LocalPosition: {x: -0.43047217, y: 0.38280344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -161,7 +161,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.47021344, y: 0.40267733}
+  m_ConnectedAnchor: {x: -0.43047217, y: 0.38280344}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -181,7 +181,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259295569566253
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 5188259295569566241}
   - component: {fileID: 5188259295569566240}
   - component: {fileID: 5188259295569566255}
-  - component: {fileID: 5188259295569566254}
+  - component: {fileID: 1632261054782260758}
   m_Layer: 3
   m_Name: 4
   m_TagString: Untagged
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: 422288033a3ab0543b0f6ee3517319eb, type: 3}
-  Scale: {x: 0.35, y: 0.32}
+  Scale: {x: 0.35, y: 0.35}
   SpriteMaterial: {fileID: 2100000, guid: fed98d8a3e99144fb8bc5c57a9a1812b, type: 2}
   PixelPerMeter: 100
   SortingLayer: Default
@@ -270,7 +270,7 @@ MonoBehaviour:
   Mass: 0.4
   LinearDrag: 1
   AngularDrag: 0.05
-  CollidersRadius: 0.55
+  CollidersRadius: 0.62
   JointsLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -459,8 +459,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!58 &5188259295569566254
-CircleCollider2D:
+  color: {r: 0.89541036, g: 0.759434, b: 1, a: 1}
+--- !u!70 &1632261054782260758
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -472,9 +473,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.04}
-  serializedVersion: 2
-  m_Radius: 1.15
+  m_Offset: {x: -0.027923329, y: -0.122360535}
+  m_Size: {x: 2.9535022, y: 2.4608126}
+  m_Direction: 1
 --- !u!1 &5188259295776446355
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259295776446355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8512531, y: -0.14968744, z: 0}
+  m_LocalPosition: {x: 0.7833432, y: -0.18069816, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -545,7 +546,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.8512531, y: -0.14968744}
+  m_ConnectedAnchor: {x: 0.7833432, y: -0.18069816}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -565,7 +566,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259295782036943
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259295782036943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.82379305, y: -0.48826355, z: 0}
+  m_LocalPosition: {x: -0.7605314, y: -0.5040722, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -636,7 +637,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.82379305, y: -0.48826355}
+  m_ConnectedAnchor: {x: -0.7605314, y: -0.5040722}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -656,7 +657,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259295792104036
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259295792104036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4840469, y: -0.6393294, z: 0}
+  m_LocalPosition: {x: -0.47414744, y: -0.6299701, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -727,7 +728,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.4840469, y: -0.6393294}
+  m_ConnectedAnchor: {x: -0.47414744, y: -0.6299701}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -747,7 +748,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259295980038545
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259295980038545}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.80873144, y: -0.03103672, z: 0}
+  m_LocalPosition: {x: -0.7425825, y: -0.056844134, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -818,7 +819,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.80873144, y: -0.03103672}
+  m_ConnectedAnchor: {x: -0.7425825, y: -0.056844134}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -838,7 +839,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259296108028387
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259296108028387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7871609, y: -0.53853595, z: 0}
+  m_LocalPosition: {x: 0.7316771, y: -0.546344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -909,7 +910,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.7871609, y: -0.53853595}
+  m_ConnectedAnchor: {x: 0.7316771, y: -0.546344}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -929,7 +930,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259296284638430
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259296284638430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.086754195, y: 0.53883815, z: 0}
+  m_LocalPosition: {x: 0.08416338, y: 0.5194022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1000,7 +1001,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.086754195, y: 0.53883815}
+  m_ConnectedAnchor: {x: 0.08416338, y: 0.5194022}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -1020,7 +1021,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62
 --- !u!1 &5188259296673221134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188259296673221134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5626019, y: 0.34567362, z: 0}
+  m_LocalPosition: {x: 0.51310444, y: 0.32858306, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1091,7 +1092,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5626019, y: 0.34567362}
+  m_ConnectedAnchor: {x: 0.51310444, y: 0.32858306}
   m_AutoConfigureDistance: 0
   m_Distance: 0.1
   m_DampingRatio: 0
@@ -1111,4 +1112,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.62

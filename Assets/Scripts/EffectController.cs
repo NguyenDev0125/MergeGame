@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.ParticleSystem;
 
 public class EffectController : MonoBehaviour
@@ -11,6 +13,10 @@ public class EffectController : MonoBehaviour
     public TextPopup textPopupEF;
     public TextPopup streakTextEF;
     public ParticleSystem[] particles;
+    public Image screenEffectImage;
+    public SpriteRenderer redZoneLine;
+    public Color transparentColor;
+    public Color redColor;
     public float delayTime;
     private ObjectPool smokeEFPool;
     private ObjectPool smokeMagicEFPool;
@@ -19,9 +25,9 @@ public class EffectController : MonoBehaviour
 
     private void Awake()
     {
-        smokeEFPool = new ObjectPool(2, smokeEF);
-        smokeMagicEFPool = new ObjectPool(2, smokeMagicEF);
-        explodeEFPool = new ObjectPool(2, explodeEF);
+        smokeEFPool = new ObjectPool(1, smokeEF);
+        smokeMagicEFPool = new ObjectPool(1, smokeMagicEF);
+        explodeEFPool = new ObjectPool(1, explodeEF);
     }
     public void Play(EffectName efName,Vector2 pos , Vector3 scale)
     {
@@ -66,6 +72,28 @@ public class EffectController : MonoBehaviour
             yield return new WaitForSeconds(delayTime- 0.1f);
         }
         callBack?.Invoke();
+    }
+
+    public void PlayScreenRedEffect()
+    {
+
+        redZoneLine.DOColor(redColor, 1f).OnComplete(() =>
+        {
+            redZoneLine.DOColor(Color.white, 1f);
+        });
+        StartCoroutine(Warning());
+    }
+
+    private IEnumerator Warning()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            screenEffectImage.DOColor(redColor, 0.2f).OnComplete(() =>
+            {
+                screenEffectImage.DOColor(transparentColor, 0.2f);
+            });
+            yield return new WaitForSeconds(0.4f);
+        }
     }
 }
 

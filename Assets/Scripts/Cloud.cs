@@ -1,3 +1,4 @@
+using Coffee.UIEffects;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Cloud : MonoBehaviour
     [SerializeField] Image currentFruitR;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] TextMeshProUGUI numText;
+    [SerializeField] LayerMask layerMask;
     bool isShowLine = false;
     Vector3 currentFruitInitScale;
     Vector3 nextFruitInitScale;
@@ -17,9 +19,18 @@ public class Cloud : MonoBehaviour
         currentFruitInitScale = currentFruitR.transform.localScale;
         nextFruitInitScale = nextFruitSpriteR.transform.localScale;
     }
-    public void ShowLine()
+    public void ShowLine(Color color)
     {
         isShowLine = true;
+        lineRenderer.material.color = color;
+        //float alpha = 1.0f;
+        //Gradient gradient = new Gradient();
+        //gradient.SetKeys(
+        //    new GradientColorKey[] { new GradientColorKey(color, 0.0f), new GradientColorKey(color, 1.0f) },
+        //    new GradientAlphaKey[] { new GradientAlphaKey(alpha, 1f), new GradientAlphaKey(alpha, 1.0f) }
+        //);
+        //lineRenderer.colorGradient = gradient;
+        nextFruitSpriteR.color = color;
     }
     public void SetNextFruitSprite(Sprite spr)
     {
@@ -56,8 +67,7 @@ public class Cloud : MonoBehaviour
     {
         if(isShowLine)
         {
-            
-            RaycastHit2D hit = Physics2D.Raycast(transform.position , Vector2.down);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position , Vector2.down , Mathf.Infinity , layerMask);
             if(hit.collider != null)
             {
                 lineRenderer.gameObject.SetActive(true);

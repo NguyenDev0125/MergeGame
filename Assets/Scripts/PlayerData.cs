@@ -108,11 +108,25 @@ public class PlayerData : MonoBehaviour
     {
         get
         {
-            return PlayerPrefs.GetInt("NumSmile", 10);
+            return PlayerPrefs.GetInt("NumSmile", 50);
         }
         set
         {
             PlayerPrefs.SetInt("NumSmile",value);
+        }
+    }
+
+    public static bool IsFirstPlay
+    {
+        get
+        {
+            bool isFirstPlay = PlayerPrefs.GetInt("IsFirstPlay", 0) == 0;
+            
+            return isFirstPlay;
+        }
+        set
+        {
+            PlayerPrefs.SetInt("IsFirstPlay", 1);
         }
     }
 }

@@ -17,7 +17,7 @@ public class UnlockNewFruitPanel : MonoBehaviour
     public void Open(int id,Sprite spr)
     {
         fruitIcon.sprite = spr;
-        fruitIcon.enabled = false;
+        fruitIcon.gameObject.SetActive(false);
         this.gameObject.SetActive(true);
         panel.SetActive(false);
         SoundManager.Instance?.StopBGM();
@@ -25,7 +25,7 @@ public class UnlockNewFruitPanel : MonoBehaviour
         effectController.PlayFirework(() =>
         {
             panel.gameObject.SetActive(true);
-            fruitIcon.enabled = true;
+            fruitIcon.gameObject.SetActive(true);
             SoundManager.Instance.PlaySound(SoundName.Victory);
             SoundManager.Instance.PlaySound(SoundName.Clap);
         });

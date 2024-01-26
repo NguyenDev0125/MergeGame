@@ -5,6 +5,7 @@ public class SaveLoadManager
 {
     public static void SaveGame()
     {
+        RemoveGameData();
         string json = "";
         Fruit[] fruits = GameObject.FindObjectsOfType<Fruit>();
         FruitSaveData[] listFrData = new FruitSaveData[fruits.Length];
@@ -18,8 +19,6 @@ public class SaveLoadManager
         }
         json = JsonConvert.SerializeObject(listFrData);
         PlayerPrefs.SetString("Game_data" , json);
-        Debug.Log("Save game");
-        Debug.Log(json);
     }
 
     public static void RemoveGameData()

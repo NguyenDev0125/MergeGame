@@ -3,6 +3,7 @@
     <package>com.applovin.mediation:google-adapter:[22.5.0.0]</package>
     <package>com.applovin:applovin-sdk:12.1.0</package>
     <package>com.google.android.gms:play-services-base:18.2.0</package>
+    <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
     <package>com.google.firebase:firebase-analytics:21.3.0</package>
     <package>com.google.firebase:firebase-analytics-unity:11.6.0</package>
     <package>com.google.firebase:firebase-app-unity:11.6.0</package>
@@ -20,7 +21,7 @@
   </files>
   <settings>
     <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
-    <setting name="bundleId" value="com.nguyendev.mergefruit2D" />
+    <setting name="bundleId" value="com.nguyendev.mergefruit2d" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

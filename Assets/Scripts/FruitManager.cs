@@ -30,15 +30,13 @@ public class FruitManager
         {
             map0.Add(fruits[i].id, fruits[i]);
         }
-        fruits = Resources.LoadAll<Fruit>("SlimeSort");
-        Debug.Log("Load " + fruits.Length);
+        resourceLoaded = true;
     }
     public static Fruit GetFruitById(int id)
     {
         if(!resourceLoaded)
         {
             LoadResource();
-            resourceLoaded = true;
         }
         return map0[id];
     }

@@ -7,6 +7,7 @@ public class SettingPanel : MonoBehaviour
     [SerializeField] Slider soundSlider , musicSlider;
     [SerializeField] Button vibrateBtn, closeBtn;
     [SerializeField] Sprite on, off;
+    [SerializeField] Button privacy, privacySetting;
     private void Awake()
     {
         closeBtn.onClick.AddListener(ClosePanel);
@@ -25,6 +26,28 @@ public class SettingPanel : MonoBehaviour
         }
         soundSlider.value = PlayerData.Sound;
         musicSlider.value = PlayerData.Music;
+
+        privacy.onClick.AddListener(ManageExistingPrivacySetting);
+    }
+
+    private void ManageExistingPrivacySetting()
+    {
+
+        if(AdsUltil.IsGDPRRegion())
+        {
+            // ta am
+            AdsUltil.LoadAndShowCMPFlow((result, message) =>
+            {
+                if(result == false)
+                {
+                    // success
+                }
+            });
+        }
+        else
+        {
+            // 
+        }
     }
     private void ClosePanel()
     {

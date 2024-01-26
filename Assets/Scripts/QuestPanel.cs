@@ -13,6 +13,7 @@ public class QuestPanel : MonoBehaviour
     [SerializeField] CoinController scoreController ;
     [SerializeField] Sprite[] listSprs;
     [SerializeField] Image slimeEfPrb, coin;
+    [SerializeField] Transform containerEffect;
     ObjectPool pool;
     ObjectPool poolCoin;
     private void Awake()
@@ -35,17 +36,21 @@ public class QuestPanel : MonoBehaviour
             Image img1 = pool.GetGOInactive().GetComponent<Image>();
             img1.gameObject.SetActive(true);
             Image img2 = pool.GetGOInactive().GetComponent<Image>();
-            img2.gameObject.SetActive(true);
+            //Image img1 = Instantiate(slimeEfPrb, slimeEfPrb.transform.parent);
+            //Image img2 = Instantiate(slimeEfPrb, slimeEfPrb.transform.parent);
 
             img1.sprite = FruitManager.GetFruitById(slimeId).Sprite;
             img2.sprite = FruitManager.GetFruitById(slimeId).Sprite;
 
-            img1.transform.parent = slimeEfPrb.transform.parent;
-            img2.transform.parent = slimeEfPrb.transform.parent;
-            img1.transform.position = pos1;
-            img2.transform.position = pos2;
+            img1.transform.SetParent(containerEffect);
+            img2.transform.SetParent(containerEffect);
             img1.transform.localScale = Vector3.one;
             img2.transform.localScale = Vector3.one;
+
+            img1.transform.position = pos1;
+            img2.transform.position = pos2;
+            //img1.transform.localScale = Vector3.one;
+            //img2.transform.localScale = Vector3.one;
             img1.gameObject.SetActive(true);
             img2.gameObject.SetActive(true);
             img1.transform.DOMove(questUI1.slimePos , 1.5f).OnComplete(() =>
@@ -63,14 +68,14 @@ public class QuestPanel : MonoBehaviour
             Image img1 = pool.GetGOInactive().GetComponent<Image>();
             img1.gameObject.SetActive(true);
             Image img2 = pool.GetGOInactive().GetComponent<Image>();
-            img2.gameObject.SetActive(true);
 
             img1.sprite = FruitManager.GetFruitById(slimeId).Sprite;
             img2.sprite = FruitManager.GetFruitById(slimeId).Sprite;
 
-            img1.transform.parent = slimeEfPrb.transform.parent;
-            img2.transform.parent = slimeEfPrb.transform.parent;
-
+            img1.transform.SetParent(containerEffect );
+            img2.transform.SetParent(containerEffect);
+            img1.transform.localScale = Vector3.one;
+            img2.transform.localScale = Vector3.one;
             img1.transform.position = pos1;
             img2.transform.position = pos2;
             img1.gameObject.SetActive(true);
@@ -92,18 +97,21 @@ public class QuestPanel : MonoBehaviour
             Image img1 = pool.GetGOInactive().GetComponent<Image>();
             img1.gameObject.SetActive(true);
             Image img2 = pool.GetGOInactive().GetComponent<Image>();
-            img2.gameObject.SetActive(true);
 
             img1.sprite = FruitManager.GetFruitById(slimeId).Sprite;
             img2.sprite = FruitManager.GetFruitById(slimeId).Sprite;
-
-            img1.transform.parent = slimeEfPrb.transform.parent;
-            img2.transform.parent = slimeEfPrb.transform.parent;
+            //img1.transform.localScale = Vector3.one;
+            //img2.transform.localScale = Vector3.one;
+            img1.transform.SetParent(containerEffect);
+            img2.transform.SetParent(containerEffect);
+            img1.transform.localScale = Vector3.one;
+            img2.transform.localScale = Vector3.one;
 
             img1.transform.position = pos1;
             img2.transform.position = pos2;
 
 
+            img2.gameObject.SetActive(true);
 
             img1.transform.DOMove(questUI1.slimePos, 1.5f).OnComplete(() =>
             {
@@ -123,7 +131,7 @@ public class QuestPanel : MonoBehaviour
         if(quest == questUI1)
         {
 
-            StartCoroutine(IE_AddScore(quest1.goldToGive, questUI1.transform.position , () =>
+            StartCoroutine(IE_AddScore(questUI1.Gold, questUI1.transform.position , () =>
             {
                 //questUI1.transform.SetSiblingIndex(2);
                 quest1 = quests[UnityEngine.Random.Range(0, 7)];
@@ -134,7 +142,7 @@ public class QuestPanel : MonoBehaviour
         else if (quest == questUI2)
         {
 
-            StartCoroutine(IE_AddScore(quest2.goldToGive, questUI2.transform.position , () =>
+            StartCoroutine(IE_AddScore(questUI2.Gold, questUI2.transform.position , () =>
             {
                 //questUI2.transform.SetSiblingIndex(2);
                 quest2 = quests[UnityEngine.Random.Range(6, 13)];
@@ -144,7 +152,7 @@ public class QuestPanel : MonoBehaviour
         else if(quest == questUI3)
         {
 
-            StartCoroutine(IE_AddScore(quest3.goldToGive , questUI3.transform.position , ()=>
+            StartCoroutine(IE_AddScore(questUI3.Gold, questUI3.transform.position , ()=>
             {
                 //questUI3.transform.SetSiblingIndex(2);
                 quest3 = quests[UnityEngine.Random.Range(12, 18)];

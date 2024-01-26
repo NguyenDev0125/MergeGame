@@ -13,12 +13,14 @@ public class GameController : MonoBehaviour
     [SerializeField] EffectController effectController;
     [SerializeField] CoinController coinController;
     [SerializeField] float delaySpawnTime;
-    [SerializeField] float delayDestroyAllFruits,delayStartDestroyAllFruit;
+    [SerializeField] float delayDestroyAllFruits, delayStartDestroyAllFruit;
     [SerializeField] BuyMoreSlimePanel buyMoreSlimePanel;
+    [SerializeField] SmallAdsPopup smallAdsPopup;
     [SerializeField] FruitController fruitController;
     bool canSpawnFruit = true;
     float lastSpawnTime;
     bool isUsingSkill = false;
+    int chargeSlimeCount = 0;
     private void Awake()
     {
         touchInputManager.OnBeginDragEvent += OnBeginDrag;
@@ -32,12 +34,12 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Reload game");
         FruitSaveData[] fruits = SaveLoadManager.GetFruitsDataSaved();
-        if(fruits != null)
+        if (fruits != null)
         {
-            for(int i = 0; i  < fruits.Length; i++)
+            for (int i = 0; i < fruits.Length; i++)
             {
                 Quaternion rot = Quaternion.Euler(0, 0, fruits[i].rotZ);
-                Fruit frClone = Instantiate(FruitManager.GetFruitById(fruits[i].id) , new Vector2(fruits[i].posX , fruits[i].posY + 1f), rot);
+                Fruit frClone = Instantiate(FruitManager.GetFruitById(fruits[i].id), new Vector2(fruits[i].posX, fruits[i].posY + 2f), rot);
                 frClone.controller = fruitController;
             }
         }
@@ -49,35 +51,57 @@ public class GameController : MonoBehaviour
 
     private void OnBeginDrag(Vector2 mousePos)
     {
-        cloud.transform.position = new Vector2(mousePos.x , fruitSpawnPoint.position.y);
-        if (canSpawnFruit) cloud.ShowLine();
+        canSpawnFruit = (Time.time - lastSpawnTime) > delaySpawnTime;
+        cloud.transform.position = new Vector2(mousePos.x, fruitSpawnPoint.position.y);
+        if (canSpawnFruit) cloud.ShowLine(spawnner.GetNextFruitColor());
 
     }
     private void OnDrag(Vector2 mousePos)
     {
         cloud.transform.position = new Vector2(mousePos.x, fruitSpawnPoint.position.y);
-        if(canSpawnFruit) cloud.ShowLine();
+        if (canSpawnFruit)
+        {
+            cloud.ShowLine(spawnner.GetNextFruitColor());
+        }
+
     }
     private void OnEndDrag(Vector2 mousePos)
     {
-        if (canSpawnFruit == false) return;
         if (Time.time - lastSpawnTime < delaySpawnTime) return;
         lastSpawnTime = Time.time;
         canSpawnFruit = false;
         Vector2 spawnPos = new Vector2(mousePos.x, fruitSpawnPoint.position.y);
-        spawnner.SpawnCurrentFruit(spawnPos);
+
 
         //SoundManager.Instance.PlaySound(SoundName.SpawnFruit);
         cloud.HideLine();
         cloud.HideHintFruit();
-        if(PlayerData.RemoveAds == 0)
+        if (PlayerData.RemoveAds == 1)
         {
-            PlayerData.NumSlime--;
-            if (PlayerData.NumSlime <= 0)
+            spawnner.SpawnCurrentFruit(spawnPos);
+        }
+        else
+        {
+            if (PlayerData.NumSlime > 0)
             {
-                buyMoreSlimePanel.Open();
+                spawnner.SpawnCurrentFruit(spawnPos);
+                PlayerData.NumSlime--;
+            }
+            else
+            {
+                if (chargeSlimeCount < 3)
+                {
+                    chargeSlimeCount++;
+                    smallAdsPopup.Open();
+                }
+                else
+                {
+                    buyMoreSlimePanel.Open();
+                }
             }
         }
+        cloud.SetNumText(PlayerData.NumSlime);
+
 
     }
     private void DisplayHintFruit()
@@ -90,7 +114,7 @@ public class GameController : MonoBehaviour
     public void OnFruitFirstCol()
     {
         canSpawnFruit = true;
-        if(!isUsingSkill)
+        if (!isUsingSkill && PlayerData.NumSlime > 0)
         {
             DisplayHintFruit();
         }
@@ -107,12 +131,14 @@ public class GameController : MonoBehaviour
         isUsingSkill = true;
         spawnner.UseBoomFruit();
         cloud.SetCurrentFruitSprite(spawnner.GetCurrentSkillSprite());
+        FirebaseManager.LogEvent("Use_Boom");
     }
     public void UseSwordSkill()
     {
         isUsingSkill = true;
         spawnner.UseSwordSkill();
         cloud.SetCurrentFruitSprite(spawnner.GetCurrentSkillSprite());
+        FirebaseManager.LogEvent("Use_Sword");
     }
 
     public void DestroyAllFruit()
@@ -124,7 +150,7 @@ public class GameController : MonoBehaviour
     {
         List<Fruit> listFruits = FindObjectsOfType<Fruit>().ToList();
         yield return new WaitForSeconds(delayStartDestroyAllFruit);
-        for(int i = 0; i < listFruits.Count; i++)
+        for (int i = 0; i < listFruits.Count; i++)
         {
             listFruits[i].HideFruit();
             int score = listFruits[i].scoreToAdd;

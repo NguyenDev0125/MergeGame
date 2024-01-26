@@ -27,6 +27,8 @@ public class Fruit : MonoBehaviour
     [SerializeField] protected LayerMask fruitLayer;
 
     [SerializeField]List<SpringJoint2D> listJoints;
+    [SerializeField] Color color;
+    public Color  Color => color;
     List<Vector2> listJointsInitPos;
     private void Awake()
     {

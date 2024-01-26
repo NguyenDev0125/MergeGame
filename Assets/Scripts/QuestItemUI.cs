@@ -11,6 +11,8 @@ public class QuestItemUI : MonoBehaviour
     private Quest quest;
     public Quest Quest => quest;
     int numSlime;
+    int gold;
+    public int Gold => gold;
     public Vector2 slimePos => slime.transform.position;
     public void SetItem(Quest quest, Sprite wifu)
     {
@@ -18,7 +20,8 @@ public class QuestItemUI : MonoBehaviour
         this.wifu.sprite = wifu;
         this.numSlime = quest.num;
         this.slime.sprite = FruitManager.GetFruitById(quest.slimeId).Sprite;
-        goldText.text = quest.goldToGive.ToString();
+        gold = quest.GetGold();
+        goldText.text = gold.ToString();
         numSlimeText.text = quest.num.ToString();
     }
 

@@ -9,19 +9,12 @@ public class FruitSpawnner : MonoBehaviour
     [SerializeField] GameObject Sword;
     [SerializeField] int maxFruitLevelSpawn;
     [SerializeField] FruitController fruitController;
-    List<ObjectPool> listPool;
     int nextFruitLevel = 0;
     int currentFruitLevel = 0;
     bool useSkill = false;
     GameObject skill = null;
     private void Awake()
     {
-        //listPool = new List<ObjectPool>();
-        //for(int i = 0;i < listFruitPrbs.Count;i++)
-        //{
-        //    ObjectPool pool = new ObjectPool(5, listFruitPrbs[i].gameObject);
-        //    listPool.Add(pool);
-        //}
         RandomNextFruit();
         currentFruitLevel = nextFruitLevel;
     }
@@ -49,7 +42,6 @@ public class FruitSpawnner : MonoBehaviour
     public void SpawnFruit(int level , Vector2 pos)
     {
         if (level-1 == listFruitPrbs[listFruitPrbs.Count - 1].id) return;
-        Debug.Log(level);
         GameObject go = Instantiate(listFruitPrbs[level-1].gameObject);// listPool[level].GetGOInactive();
         go.transform.position = pos;
         go.GetComponent<Fruit>().controller = fruitController;
@@ -62,6 +54,10 @@ public class FruitSpawnner : MonoBehaviour
         nextFruitLevel = UnityEngine.Random.Range(0,maxFruitLevelSpawn);
     }
 
+    public Color GetNextFruitColor()
+    {
+        return listFruitPrbs[nextFruitLevel].Color;
+    }
     public Sprite GetNextFruitSprite()
     {
         return listFruitPrbs[nextFruitLevel].Sprite;

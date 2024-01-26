@@ -10,8 +10,9 @@ public class MaxManager : MonoSingleton<MaxManager>
     string reward = "6b28d70cd08353c3";
 
     bool isBlockInter = false;
-    int blockTime = 60;
-    public int BlockTime { get => blockTime; }
+    int blockTime = 40; 
+    public bool IsBlockInter => isBlockInter;
+    public int BlockTime { get => blockTime;}
     protected override void Awake()
     {
         base.Awake();
@@ -27,13 +28,32 @@ public class MaxManager : MonoSingleton<MaxManager>
             MaxSdkCallbacks.Banner.OnAdLoadedEvent += OnBannerLoaded;
             MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent += OnInterDisplayed;
             MaxSdkCallbacks.Rewarded.OnAdReceivedRewardEvent += OnAdReceivedRewardEvent;
+
+            MaxSdkCallbacks.Interstitial.OnAdRevenuePaidEvent += OnAdRevenuePaidEvent;
+            MaxSdkCallbacks.Rewarded.OnAdRevenuePaidEvent += OnAdRevenuePaidEvent;
+            MaxSdkCallbacks.Banner.OnAdRevenuePaidEvent += OnAdRevenuePaidEvent;
+            MaxSdkCallbacks.MRec.OnAdRevenuePaidEvent += OnAdRevenuePaidEvent;
         };
         MaxSdk.SetSdkKey(sdkKey);
         MaxSdk.SetUserId("USER_ID");
         MaxSdk.ShowMediationDebugger();
         MaxSdk.InitializeSdk();
     }
-
+    private void OnAdRevenuePaidEvent(string adUnitId, MaxSdkBase.AdInfo impressionData)
+    {
+        Debug.Log("Log event ad revenue");
+        double revenue = impressionData.Revenue;
+        var impressionParameters = new[] {
+                     new Firebase.Analytics.Parameter("ad_platform", "AppLovin"),
+                     new Firebase.Analytics.Parameter("ad_source", impressionData.NetworkName),
+                     new Firebase.Analytics.Parameter("ad_unit_name", impressionData.AdUnitIdentifier),
+                     new Firebase.Analytics.Parameter("ad_format", impressionData.AdFormat),
+                     new Firebase.Analytics.Parameter("value", revenue),
+                     new Firebase.Analytics.Parameter("currency", "USD"), // All AppLovin revenue is sent in USD
+                 };
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_max", impressionParameters);
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_impression", impressionParameters);
+    }
     private void InitInterAd()
     {
         LoadInterAd();
@@ -46,7 +66,6 @@ public class MaxManager : MonoSingleton<MaxManager>
 
     public void ShowInterAd()
     {
-        if (isBlockInter) return;
         if(MaxSdk.IsInterstitialReady(interUnitId))
         {
             MaxSdk.ShowInterstitial(interUnitId);
@@ -71,7 +90,6 @@ public class MaxManager : MonoSingleton<MaxManager>
             OnAdDisplayed = callback;
             MaxSdk.ShowInterstitial(interUnitId);
             isBlockInter = true;
-            
             StopAllCoroutines();
             StartCoroutine(IE_UnblockInter());
         }
@@ -81,6 +99,7 @@ public class MaxManager : MonoSingleton<MaxManager>
         }
     }
 
+    
     private void OnInterDisplayed(string mgs , MaxSdk.AdInfo info)
     {
         LoadInterAd();

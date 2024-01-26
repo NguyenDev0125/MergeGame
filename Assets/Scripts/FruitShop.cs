@@ -82,7 +82,6 @@ public class FruitShop : MonoBehaviour
         });
     }
 
-
     public void PurchaseUltraPack()
     {
         Purchaser.Instance.IAP_Manager.Purchase(Purchaser._utraPack);

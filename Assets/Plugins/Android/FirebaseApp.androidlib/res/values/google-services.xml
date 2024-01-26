@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">75173929805</string>
+  <string name="google_storage_bucket" translatable="false">merge-game-694cd.appspot.com</string>
+  <string name="project_id" translatable="false">merge-game-694cd</string>
+  <string name="google_api_key" translatable="false">AIzaSyB73PQr4ATUtAe56nc1SHpczAQLP5fcUi0</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB73PQr4ATUtAe56nc1SHpczAQLP5fcUi0</string>
+  <string name="google_app_id" translatable="false">1:75173929805:android:4604fa0af5b58105274d04</string>
+</resources>
