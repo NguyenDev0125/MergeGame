@@ -10,7 +10,7 @@ public class MaxManager : MonoSingleton<MaxManager>
     string reward = "6b28d70cd08353c3";
 
     bool isBlockInter = false;
-    int blockTime = 40; 
+    int blockTime = 20; 
     public bool IsBlockInter => isBlockInter;
     public int BlockTime { get => blockTime;}
     protected override void Awake()
@@ -54,6 +54,10 @@ public class MaxManager : MonoSingleton<MaxManager>
         Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_max", impressionParameters);
         Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_impression", impressionParameters);
     }
+    public bool IsInterReady()
+    {
+        return MaxSdk.IsInterstitialReady(interUnitId);
+    }
     private void InitInterAd()
     {
         LoadInterAd();
@@ -69,9 +73,6 @@ public class MaxManager : MonoSingleton<MaxManager>
         if(MaxSdk.IsInterstitialReady(interUnitId))
         {
             MaxSdk.ShowInterstitial(interUnitId);
-            isBlockInter = true;
-            StopAllCoroutines();
-            StartCoroutine(IE_UnblockInter());
         }
         else
         {
@@ -79,19 +80,13 @@ public class MaxManager : MonoSingleton<MaxManager>
         }
     }
     Action OnAdDisplayed;
-
-
-
     public void ShowInterAd(Action callback)
     {
-        if (isBlockInter) return;
+        if (PlayerData.RemoveAds == 1) return;
         if (MaxSdk.IsInterstitialReady(interUnitId))
         {
             OnAdDisplayed = callback;
             MaxSdk.ShowInterstitial(interUnitId);
-            isBlockInter = true;
-            StopAllCoroutines();
-            StartCoroutine(IE_UnblockInter());
         }
         else
         {

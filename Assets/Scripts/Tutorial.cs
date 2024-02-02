@@ -15,12 +15,9 @@ public class Tutorial : MonoBehaviour
         PlayerData.IsFirstPlay = false;
 
     }
-
-    private void Update()
+    public void Destroy()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Destroy(gameObject);
-        }
+        this.gameObject.SetActive(false);
+        PlayerData.IsFirstPlay= false;
     }
 }

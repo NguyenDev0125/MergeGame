@@ -5,9 +5,9 @@ public class Purchaser : MonoSingleton<Purchaser>
     {
         DontDestroyOnLoad(this.gameObject);
     }
-    public static readonly string _utraPack = "ultraPack",
-                    _10Sword = "_10Sword",
-                    _10Bomb = "_10Bomb",
+    public static readonly string _utraPack = "ultrapack",
+                    _10Sword = "_10sword",
+                    _10Bomb = "_10bomb",
                     _removeAds = "remove_ads";
     public IAPManager IAP_Manager
     {

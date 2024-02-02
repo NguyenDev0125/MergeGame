@@ -14,6 +14,7 @@ public class GameOverPanel : MonoBehaviour
     [SerializeField] ScoreManager scoreManager;
     [SerializeField] GameObject panel;
     [SerializeField] EffectController effectController;
+    [SerializeField] HomeUIController homeUIController;
     bool isShow = false;
     private void Awake()
     {
@@ -68,7 +69,7 @@ public class GameOverPanel : MonoBehaviour
 
     private void GoHome()
     {
-        SceneManager.LoadScene("Home");
+        homeUIController.ShowUI();
         SoundManager.Instance.PlayBGM();
     }
 

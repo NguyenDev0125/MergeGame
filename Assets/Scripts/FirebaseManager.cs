@@ -1,4 +1,5 @@
 using Firebase.Analytics;
+using Firebase.RemoteConfig;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,5 +36,6 @@ public static class FirebaseManager
             return;
         Constraints.Add(ConstraintExclusive);
         LogEvent(EventName, ParameterName, ParameterValue);
+        
     }
 }

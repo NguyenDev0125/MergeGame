@@ -29,6 +29,7 @@ public class Fruit : MonoBehaviour
     [SerializeField]List<SpringJoint2D> listJoints;
     [SerializeField] Color color;
     public Color  Color => color;
+    public bool IsCollided => isCol;
     List<Vector2> listJointsInitPos;
     private void Awake()
     {
@@ -66,7 +67,8 @@ public class Fruit : MonoBehaviour
     }
     public void HideFruit()
     {
-        Invoke("Hide", controller.delayMerge);
+        //Invoke("Hide", controller.delayMerge);
+        DOVirtual.DelayedCall(controller.delayMerge , Hide);
     }
     protected virtual void Hide()
     {

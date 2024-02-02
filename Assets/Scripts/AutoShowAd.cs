@@ -4,28 +4,47 @@ using UnityEngine;
 
 public class AutoShowAd : MonoBehaviour
 {
-    [SerializeField] float delayStartShowAd;
-    [SerializeField] float delayShowAd;
     [SerializeField] SmallAdsPopup popup;
+    [SerializeField] TextMeshProUGUI adText;
+    [SerializeField] RemoveAdPopup removeAdPopup;
     private void Start()
     {
         if(PlayerData.RemoveAds == 1)
         {
             return;
         }
-        Invoke("AutoShowAds",delayStartShowAd);
-    }
-    private void AutoShowAds()
-    {
         StartCoroutine(IE_CountDown());
     }
+
     private IEnumerator IE_CountDown()
     {
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 100; i++)
         {
-            popup.Open();
-            yield return new WaitForSeconds(delayShowAd);
+            yield return new WaitForSeconds(FirebaseRemoteConfigManager.delayAdTime);
+            if(PlayerData.RemoveAds == 0)
+            {
+                StartCoroutine(CooldownShowAd());
+            }
+
         }
+    }
+    private IEnumerator CooldownShowAd()
+    {
+        adText.gameObject.SetActive(true);
+        for (int i = 4; i >= 0; i--)
+        {
+            adText.text = $"Breaking time in {i}s";
+            yield return new WaitForSeconds(1);
+        }
+        adText.gameObject.SetActive(false);
+        MaxManager.Instance.ShowInterAd(() =>
+        {
+            int random = UnityEngine.Random.Range(0, 2);
+            if(random == 1)
+            {
+                removeAdPopup.Open();
+            }
+        });
     }
 
 

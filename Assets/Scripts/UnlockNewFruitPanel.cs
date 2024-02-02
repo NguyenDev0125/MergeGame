@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,20 +17,25 @@ public class UnlockNewFruitPanel : MonoBehaviour
 
     public void Open(int id,Sprite spr)
     {
-        fruitIcon.sprite = spr;
-        fruitIcon.gameObject.SetActive(false);
-        this.gameObject.SetActive(true);
-        panel.SetActive(false);
-        SoundManager.Instance?.StopBGM();
 
-        effectController.PlayFirework(() =>
+        DOVirtual.DelayedCall(2f, () =>
         {
-            panel.gameObject.SetActive(true);
-            fruitIcon.gameObject.SetActive(true);
-            SoundManager.Instance.PlaySound(SoundName.Victory);
-            SoundManager.Instance.PlaySound(SoundName.Clap);
+            fruitIcon.sprite = spr;
+            fruitIcon.gameObject.SetActive(false);
+            this.gameObject.SetActive(true);
+            panel.SetActive(false);
+            SoundManager.Instance?.StopBGM();
+            effectController.PlayFirework(() =>
+            {
+                panel.gameObject.SetActive(true);
+                fruitIcon.gameObject.SetActive(true);
+                SoundManager.Instance.PlaySound(SoundName.Victory);
+                SoundManager.Instance.PlaySound(SoundName.Clap);
+            });
+            slimeUnlockProgressPanel.ShowProgress(id);
         });
-        slimeUnlockProgressPanel.ShowProgress(id);
+
+
     }
     private void Close()
     {

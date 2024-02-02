@@ -26,18 +26,24 @@ public class Redzone : MonoBehaviour
             Debug.DrawRay(castPos, Vector2.right * distRay, Color.blue, 3f);
             if (hit.collider != null)
             {
-                timer += delayCastTime;
+                Fruit fr = hit.collider.gameObject.GetComponent<Fruit>();   
+                if(fr != null && fr.IsCollided)
+                {
+                    timer += delayCastTime;
 
-                if (timer > maxTime && GameManager.Instance.gameState == GameState.Playing)
-                {
-                    GameManager.Instance.GameOver();
-                    timer = 0f;
-                }else if(timer > 3)
-                {
-                    effectController.PlayScreenRedEffect();
-                    SoundManager.Instance.PlaySound(SoundName.Warning);
-                    uiController.PingItem();
+                    if (timer > maxTime && GameManager.Instance.gameState == GameState.Playing)
+                    {
+                        GameManager.Instance.GameOver();
+                        timer = 0f;
+                    }
+                    else if (timer > 3)
+                    {
+                        effectController.PlayScreenRedEffect();
+                        SoundManager.Instance.PlaySound(SoundName.Warning);
+                        uiController.PingItem();
+                    }
                 }
+
             }
             else
             {

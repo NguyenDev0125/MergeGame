@@ -76,30 +76,31 @@ public class GameController : MonoBehaviour
         //SoundManager.Instance.PlaySound(SoundName.SpawnFruit);
         cloud.HideLine();
         cloud.HideHintFruit();
-        if (PlayerData.RemoveAds == 1)
-        {
-            spawnner.SpawnCurrentFruit(spawnPos);
-        }
-        else
-        {
-            if (PlayerData.NumSlime > 0)
-            {
-                spawnner.SpawnCurrentFruit(spawnPos);
-                PlayerData.NumSlime--;
-            }
-            else
-            {
-                if (chargeSlimeCount < 3)
-                {
-                    chargeSlimeCount++;
-                    smallAdsPopup.Open();
-                }
-                else
-                {
-                    buyMoreSlimePanel.Open();
-                }
-            }
-        }
+        spawnner.SpawnCurrentFruit(spawnPos);
+        //if (PlayerData.RemoveAds == 1)
+        //{
+        //    spawnner.SpawnCurrentFruit(spawnPos);
+        //}
+        //else
+        //{
+        //    if (PlayerData.NumSlime > 0)
+        //    {
+        //        spawnner.SpawnCurrentFruit(spawnPos);
+        //        PlayerData.NumSlime--;
+        //    }
+        //    else
+        //    {
+        //        if (chargeSlimeCount < 3)
+        //        {
+        //            chargeSlimeCount++;
+        //            smallAdsPopup.Open();
+        //        }
+        //        else
+        //        {
+        //            buyMoreSlimePanel.Open();
+        //        }
+        //    }
+        //}
         cloud.SetNumText(PlayerData.NumSlime);
 
 
