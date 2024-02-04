@@ -19,7 +19,7 @@ public class AutoShowAd : MonoBehaviour
 
     private IEnumerator IE_CountDown()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10000000; i++)
         {
             yield return new WaitForSeconds(FirebaseRemoteConfigManager.delayAdTime);
             if(PlayerData.RemoveAds == 0)
@@ -31,25 +31,32 @@ public class AutoShowAd : MonoBehaviour
     }
     private IEnumerator CooldownShowAd()
     {
-
-        adText.gameObject.SetActive(true);
-        panel.SetActive(true);
-        for (int i = 4; i >= 0; i--)
+        Debug.Log("Inter"+MaxManager.Instance.IsInterReady());
+        if(MaxManager.Instance.IsInterReady())
         {
-            adText.text = $"Breaking time in {i}s";
-            yield return new WaitForSeconds(1);
-        }
-        adText.gameObject.SetActive(false);
-        panel.SetActive(false);
-        MaxManager.Instance.ShowInterAd(() =>
-        {
-            int random = UnityEngine.Random.Range(0, 2);
-            if (random == 1)
+            adText.gameObject.SetActive(true);
+            panel.SetActive(true);
+            for (int i = 4; i >= 0; i--)
             {
-                removeAdPopup.Open();
-                MaxManager.Instance.LoadInterAd();
+                adText.text = $"Breaking time in {i}s";
+                yield return new WaitForSeconds(1);
             }
-        });
+            adText.gameObject.SetActive(false);
+            panel.SetActive(false);
+            MaxManager.Instance.ShowInterAd(() =>
+            {
+                int random = UnityEngine.Random.Range(0, 2);
+                if (random == 1)
+                {
+                    removeAdPopup.Open();
+                    MaxManager.Instance.LoadInterAd();
+                }
+            });
+        }
+        else
+        {
+            MaxManager.Instance.LoadInterAd();
+        }
 
     }
 
