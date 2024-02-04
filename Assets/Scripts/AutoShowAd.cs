@@ -6,6 +6,7 @@ public class AutoShowAd : MonoBehaviour
 {
     [SerializeField] SmallAdsPopup popup;
     [SerializeField] TextMeshProUGUI adText;
+    [SerializeField] GameObject panel;
     [SerializeField] RemoveAdPopup removeAdPopup;
     private void Start()
     {
@@ -30,21 +31,26 @@ public class AutoShowAd : MonoBehaviour
     }
     private IEnumerator CooldownShowAd()
     {
+
         adText.gameObject.SetActive(true);
+        panel.SetActive(true);
         for (int i = 4; i >= 0; i--)
         {
             adText.text = $"Breaking time in {i}s";
             yield return new WaitForSeconds(1);
         }
         adText.gameObject.SetActive(false);
+        panel.SetActive(false);
         MaxManager.Instance.ShowInterAd(() =>
         {
             int random = UnityEngine.Random.Range(0, 2);
-            if(random == 1)
+            if (random == 1)
             {
                 removeAdPopup.Open();
+                MaxManager.Instance.LoadInterAd();
             }
         });
+
     }
 
 
