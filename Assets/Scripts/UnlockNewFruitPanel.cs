@@ -32,7 +32,7 @@ public class UnlockNewFruitPanel : MonoBehaviour
                 SoundManager.Instance.PlaySound(SoundName.Victory);
                 SoundManager.Instance.PlaySound(SoundName.Clap);
             });
-            slimeUnlockProgressPanel.ShowProgress(id);
+            //slimeUnlockProgressPanel.ShowProgress(id);
         });
 
 

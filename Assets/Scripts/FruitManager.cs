@@ -16,14 +16,7 @@ public class FruitManager
     private static void LoadResource()
     {
         Fruit[] fruits;
-        if (PlayerPrefs.GetInt("map_selected", 0) == 0)
-        {
-            fruits = Resources.LoadAll<Fruit>("SlimeSort");
-        }
-        else
-        {
-            fruits = Resources.LoadAll<Fruit>("SlimeSort");
-        }
+       fruits = Resources.LoadAll<Fruit>("SlimeSort");
 
         map0 = new Dictionary<int, Fruit>();
         for(int i = 0; i < fruits.Length; i++)

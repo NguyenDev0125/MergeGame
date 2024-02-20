@@ -34,7 +34,7 @@ public class FruitController : MonoBehaviour
         questPanel.OnSlimeExplode(id, pos1, pos2);
         spawnner.SpawnFruit(++level, newPos);
         PlayerData.SetNumSlime(id  , PlayerData.GetNumSlimeById(id) + 2);
-        if(PlayerPrefs.GetInt("fruit_" +  level, 0) == 0 && FruitManager.GetFruitById(level).defaultUnlocked == false)
+        if(level > 5)
         {
             Debug.Log("Unlock " + level);
             PlayerPrefs.SetInt("fruit_" +  level, 1);
